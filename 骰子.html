@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body{
+            background: url("[PAERZ@L(6L$PYRTGP8$~`R.png") center no-repeat;
+            perspective: 800px;
+        }
+    #father{
+        margin: 100px 500px;
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        animation: xxx 2s linear infinite;
+
+    }
+    div:not(#father){
+        width: 200px;
+        height: 200px;
+        background:url("时钟.png");
+        position: absolute;
+        font-size: 50px;
+        text-align: center;
+        line-height: 200px;
+        border-radius: 10px;
+    }
+    @keyframes xxx {
+        from{
+
+        }
+        to{
+            transform:rotateY(360deg) ;
+        }
+
+    }
+        #div1{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        #div2{
+            transform: translateZ(100px);
+        }
+        #div3{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        #div4{
+            transform: rotateY(-180deg) translateZ(100px);
+        }
+        #div5{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        #div6{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+        <div id="father">
+            <div id="div1"></div>
+            <div id="div2"></div>
+            <div id="div3"></div>
+            <div id="div4"></div>
+            <div id="div5"></div>
+            <div id="div6"></div>
+        </div>
+</body>
+</html>

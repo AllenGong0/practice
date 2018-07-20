@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .sq{
+            margin: 0;
+            /*display: inline-block;*/
+            width: 200px;
+            height: 200px;
+            border: 2px red solid;
+            position: absolute;
+        }
+        .sq:hover{
+            border-color:green;
+        }
+        .two{
+            left: 210px;
+            border-left-color: transparent;
+        }
+        .three {
+            border-top-color: transparent;
+            top: 210px;
+        }
+        .four{
+            top:210px;
+            left: 210px;
+            border-top-color: transparent;
+            border-left-color: transparent;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="square0">
+            <div class="sq one">1</div>
+        <div class="two sq">2</div>
+    </div>
+    <div id="square1">
+        <div  class="sq three">3</div>
+        <div class="sq four">4</div>
+    </div>
+
+</body>
+</html>
