@@ -5,8 +5,8 @@
     <title>Title</title>
     <style>
         * {
-            margin: 0px;
-            padding: 0px;
+            margin: 0;
+            padding: 0;
         }
 
         #menu {
@@ -27,7 +27,7 @@
             border-bottom: 1px solid green;
         }
         #menu li:last-child{
-            border-bottom: 0px;
+            border-bottom: 0;
         }
         #menu li:hover{
             background-color: red;
@@ -58,7 +58,7 @@
 </ul>
 <script>
      var oMenu = document.getElementById('menu');
-     var aRr = document.getElementsByTagName('li')
+     var aRr = document.getElementsByTagName('li');
      document.oncontextmenu = function (e) {
          oMenu.style.left = e.clientX + 'px';
          oMenu.style.top = e.clientY + 'px';
