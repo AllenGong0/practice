@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -61,20 +65,32 @@
      var aRr = document.getElementsByTagName('li');
      document.oncontextmenu = function (e) {
          var dw = document.documentElement.offsetWidth;
-         console.log(window.innerWidth);
+         //console.log(window.innerWidth);
          var mw = oMenu.offsetWidth;
+         var dh = document.documentElement.offsetHeight;
+         var mh = oMenu.offsetHeight;
          oMenu.style.display = 'block';
          if(e.clientX > dw - mw)
 
          {
              oMenu.style.left = (e.clientX-mw) + 'px'
          }
+
          else{
              oMenu.style.left = e.clientX + 'px';
-         }
 
-         oMenu.style.top = e.clientY + 'px';
-         return false;
+         }
+        if(e.clientY > dh-mh)
+        {
+            oMenu.style.top = (e.clientY-mh) + 'px';
+        }
+        else
+        {
+            oMenu.style.top = e.clientY + 'px';
+        }
+                     e.returnValue = false;//取消浏览器默认行为（IE）
+         //e.preventDefault();
+         //return false;
      }
      document.onclick = function () {
          oMenu.style.display = 'none';
