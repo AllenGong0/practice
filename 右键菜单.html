@@ -60,9 +60,19 @@
      var oMenu = document.getElementById('menu');
      var aRr = document.getElementsByTagName('li');
      document.oncontextmenu = function (e) {
-         oMenu.style.left = e.clientX + 'px';
-         oMenu.style.top = e.clientY + 'px';
+         var dw = document.documentElement.offsetWidth;
+         var mw = oMenu.offsetWidth;
          oMenu.style.display = 'block';
+         if(e.clientX > dw - mw)
+
+         {
+             oMenu.style.left = (e.clientX-mw) + 'px'
+         }
+         else{
+             oMenu.style.left = e.clientX + 'px';
+         }
+
+         oMenu.style.top = e.clientY + 'px';
          return false;
      }
      document.onclick = function () {
