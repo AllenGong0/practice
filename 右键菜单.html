@@ -61,6 +61,7 @@
      var aRr = document.getElementsByTagName('li');
      document.oncontextmenu = function (e) {
          var dw = document.documentElement.offsetWidth;
+         console.log(window.innerWidth);
          var mw = oMenu.offsetWidth;
          oMenu.style.display = 'block';
          if(e.clientX > dw - mw)
