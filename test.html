@@ -3,11 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .a{
+            background-color:green;
+        }
+    </style>
 </head>
 <body>
+<img id="MyImage"src="image/%5BPAERZ@L(6L$PYRTGP8$~%60R.png" alt="">
+<div id="div1" class="asda">
+    14151
+</div>
 <script>
-    console.log(window.innerWidth)
-    console.log(window.innerHeight)
+    // window.prompt('输入','1231');
+    // // var  a = open('','','width=200 ');
+    // a.alert("asdad");
+    // var a =
+    // window.onload = function () {
+    //     var img = document.getElementById('MyImage');
+    //     img.onclick = function(){
+    //         console.log(img.tagName);
+    //     }
+    // }
+    var a = document.getElementById('div1');
+    //console.log(a.innerHTML);
+    //console.log(a.className);
+    a.onclick = function () {
+        console.log(a.innerHTML);
+        div1.innerHTML = "更改div";
+        // div1.style.background = 'blue';
+        div1.className = 'a';
+    }
+
 </script>
 
 </body>
