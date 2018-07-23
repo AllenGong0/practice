@@ -62,7 +62,7 @@
 </ul>
 <script>
      var oMenu = document.getElementById('menu');
-     var aRr = document.getElementsByTagName('li');
+     var aRr = oMenu.getElementsByTagName('li');
      document.oncontextmenu = function (e) {
          var dw = document.documentElement.offsetWidth;
          //console.log(window.innerWidth);
@@ -88,8 +88,8 @@
         {
             oMenu.style.top = e.clientY + 'px';
         }
-                     e.returnValue = false;//取消浏览器默认行为（IE）
-         //e.preventDefault();
+         //            e.returnValue = false;//取消浏览器默认行为（IE）
+         e.preventDefault();
          //return false;
      }
      document.onclick = function () {
