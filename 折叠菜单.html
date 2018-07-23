@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #menu h1{
+            background-color: blue;
+            color: black;
+            font-size: 25px;
+        }
+        #menu{
+            width: 200px;
+            margin: 100px auto;
+            border: 1px solid red;
+
+        }
+        #menu li{
+            list-style: none;
+            text-align: center;
+        }
+        #menu .sub-menu{
+            display: none;
+        }
+        .sub-menu li{
+            height: 22px;
+            line-height: 22px;
+        }
+    </style>
+</head>
+<body>
+<ul id = "menu">
+    <li >
+        <h1> 管理区</h1>
+        <ul class="sub-menu" style="display: none">
+            <li>007</li>
+            <li>008</li>
+            <li>009</li>
+        </ul>
+    </li>
+    <li>
+        <h1> 交流区</h1>
+        <ul class="sub-menu" style="display: none">
+            <li>007</li>
+            <li>008</li>
+            <li>009</li>
+        </ul>
+    </li>
+</ul>
+<script>
+    var aH = document.getElementsByTagName('h1');
+    var SubMenu = document.getElementsByClassName('sub-menu');
+    for(var i=0; i<aH.length; i++)
+    {
+        aH[i].xx = i;
+
+            aH[i].onclick = function () {
+                if(getStyle(SubMenu[this.xx],'display')== 'none'){
+                SubMenu[this.xx].style.display = 'block';
+                }
+                else
+                {
+                    SubMenu[this.xx].style.display = 'none'
+                }
+
+                //style.display 只能获取到内联样式的值
+        }
+    }
+    function getStyle(elem,prop) {
+        if (elem.currentStyle){
+            return elem.currentStyle[prop];
+        }
+        else
+        {
+            return getComputedStyle(elem,false)[prop];
+        }
+    }
+</script>
+</body>
+</html>
