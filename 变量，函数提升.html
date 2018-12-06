@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function f() {
+        var a = 5
+        console.log(a);
+
+        function f1() {
+            console.log(a);
+        }
+    }
+    //变量提升
+    // foo;  // foo2
+    // function foo() {
+    //     console.log('foo1');
+    // }
+    //
+    // foo();  // foo2
+    //
+    // function foo() {
+    //     console.log('foo2');
+    // }
+    //
+    // foo(); // foo2
+
+    //函数提升
+    // foo();
+    // function foo() {
+    //     console.log('fool1');
+    // }
+    //
+    // foo();
+    //
+    // function foo() {
+    //     console.log('fool2');
+    // }
+    //
+
+
+    foo();  // foo2
+    var foo = function() {
+        console.log('foo1');
+    }
+
+    foo();  // foo1，foo重新赋值
+    function foo() {
+        console.log('foo2');
+    }
+
+    foo(); // foo1
+
+    // var scope = "global scope";
+    // function checkscope(){
+    //     var scope = "local scope";
+    //     function f(){
+    //         return scope;
+    //     }
+    //     // console.log(f)
+    //     return f;
+    // }
+    // console.log(checkscope()());
+</script>
+</body>
+>
+</html>

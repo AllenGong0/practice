@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .ui-button-warning {
+            width: 100px;
+            height: 50px;
+            border: 0;
+            background: aqua;
+            /*color: red;*/
+        }
+        .ui-button-warning:hover{
+            filter: hue-rotate(50deg);
+        }
+        .ui-button-warning:active{
+            filter: hue-rotate(100deg);
+
+        }
+        .bird {
+            width: 500px; height: 500px;
+            background: url(./module3-bg.png) no-repeat;
+            background-size: contain;
+            /* 动画 */
+            animation: pulse 5s linear infinite;
+        }
+        @keyframes pulse {
+            from {
+                filter: hue-rotate(0);
+            }
+            to {
+                filter: hue-rotate(890deg);
+            }
+        }
+    </style>
+</head>
+<button class="ui-button ui-button-warning">红按钮</button>
+<div class="bird"></div>
+<body>
+<script>
+
+</script>
+</body>
+</html>
