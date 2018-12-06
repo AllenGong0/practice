@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<input type="text" id="debounce">-->
+<input type="text" id="debounce">
+<script>
+    //模拟一段ajax请求
+    window.onload = function () {
+        function ajax(content) {
+            console.log('ajax request ' + content)
+        }
+
+        function debounce(fun, delay) {
+            return function a(args) {
+                console.log("args:"+args);
+                let that = this
+                let _args = args
+                clearTimeout(fun.id)
+                console.log(fun.id)
+                fun.id = setTimeout(function () {
+                    console.log("this:"+this)
+                    fun.call(that, _args)
+                    console.log("改变后的this："+this)
+                }, delay)
+            }
+        }
+
+        let inputb = document.getElementById('debounce')
+        let debounceAjax = debounce(ajax, 500)
+        inputb.addEventListener('keyup', function (e) {
+            debounceAjax(e.target.value)
+        })
+    }
+
+</script>
+</body>
+</html>
