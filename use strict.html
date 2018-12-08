@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // use strict放在文件的顶部或则函数的第一行来启动更加严格的检查来避免失误引起的错误。
+    function f(a) {
+        "use strict"
+        var x
+        x = a + 5; //x未定义就会报错 undefined
+        console.log(x)
+    //     因为x没有定义，如果使用了use strict
+    // ，x是不会被当做全局的变量来看待。
+    }
+    // 解决办法：定义x
+    f(3);
+</script>
+</body>
+</html>

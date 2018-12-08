@@ -6,14 +6,14 @@
 </head>
 <body>
 <script>
-    function f() {
-        var a = 5
-        console.log(a);
-
-        function f1() {
-            console.log(a);
-        }
-    }
+    // function f() {
+    //     var a = 5
+    //     console.log(a);
+    //
+    //     function f1() {
+    //         console.log(a);
+    //     }
+    // }
     //变量提升
     // foo;  // foo2
     // function foo() {
@@ -27,43 +27,50 @@
     // }
     //
     // foo(); // foo2
-
+    // a = 10
+    // console.log(a);
+// var a=55;
     //函数提升
-    // foo();
+
+  // var a=  function foo() {
+  //       console.log('fool1');
+  //   }
+  //
+  //   a();
+  //
+  //  var a= function foo() {
+  //       console.log('fool2');
+  //   }
+  //   a();
+    //
+
+
+    // foo();  // foo2
+    // var foo = function() {
+    //     console.log('foo1');
+    // }
+    //
+    // foo();  // foo1，foo重新赋值
     // function foo() {
-    //     console.log('fool1');
+    //     console.log('foo2');
     // }
     //
-    // foo();
-    //
-    // function foo() {
-    //     console.log('fool2');
-    // }
-    //
+    // foo(); // foo1
 
+    var scope = "global scope";
+    function checkscope(){
+        var scope = "local scope";
 
-    foo();  // foo2
-    var foo = function() {
-        console.log('foo1');
+        function f1() {
+            return 484;
+        }
+        function f(){
+            return scope;
+        }
+        return f1()
+        // console. return f;
     }
-
-    foo();  // foo1，foo重新赋值
-    function foo() {
-        console.log('foo2');
-    }
-
-    foo(); // foo1
-
-    // var scope = "global scope";
-    // function checkscope(){
-    //     var scope = "local scope";
-    //     function f(){
-    //         return scope;
-    //     }
-    //     // console.log(f)
-    //     return f;
-    // }
-    // console.log(checkscope()());
+    console.log(checkscope());
 </script>
 </body>
 >
