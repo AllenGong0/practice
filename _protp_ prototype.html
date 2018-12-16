@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1.prototype 是函数(function) 的一个属性, 它指向函数的原型.
+    // 2.__proto__   是对象的内部属性, 它指向构造器的原型,
+    // 对象依赖它进行原型链查询，instanceof 也是依赖它来判断是否继承关系.
+    //由上, prototype 只有函数才有, 其他(非函数)对象不具有该属性.
+    // 而 __proto__ 是对象的内部属性, 任何对象都拥有该属性.
+    function Person(name){
+        this.name = name;
+    }
+    var p1 = new Person('louis');
+
+    console.log(Person.prototype);//Person原型 {constructor: Person(name),__proto__: Object}
+    console.log(p1.prototype);//undefined
+
+    console.log(Person.__proto__);//空函数, function(){}
+    console.log(p1.__proto__ == Person.prototype);//true
+</script>
+</body>
+</html>

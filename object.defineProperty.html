@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 使用Object.defineProperty 可以给对象赋值
+    var obj = {};
+    Object.defineProperty(obj,'name',{
+        value:'zxx'
+    })
+
+    console.log(obj.name);
+
+    var obj = {};
+    var initValue = 'zxy'
+    Object.defineProperty(obj,'name',{
+        get:function(){
+            console.log('我被读取了')
+            return initValue
+        },
+        set:function(v){
+            console.log('我被赋值了')
+            initValue = v
+        }
+    })
+    //obj.name = 'lxy'
+    console.log(obj.name)
+
+</script>
+</body>
+</html>
