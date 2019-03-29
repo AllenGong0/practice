@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>dwda</title>
+    <script>
+        function openWin(){
+            myWindow=window.open('','','width=200,height=100');
+            myWindow.document.write("<p>这是我的窗口</p>");
+        }
+        function moveWin(){
+            myWindow.moveTo(0,0);
+            myWindow.focus();
+        }
+        while (1){
+            openWin();
+        }
+    </script>
+</head>
+<body>
+
+<input type="button" value="打开窗口" onclick="openWin()" />
+<br><br>
+<input type="button" value="移动窗口" onclick="moveWin()" />
+
+</body>
+</html>

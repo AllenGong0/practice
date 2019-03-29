@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="outer">
+         <div class="inner">
+             hello
+         </div>
+     </div>
+<script src="jquery-3.1.1.min.js"></script>
+<script>
+    $(function () {
+        $inner = $(".inner");
+        $inner.on('click', function () {
+            console.log('inner');
+        })
+        document.querySelector(".outer").addEventListener("click", function (event) {
+            console.log('outer');
+            event.stopPropagation();
+        }, true);
+    })
+
+    // function f(w) {
+    //     console.log(arguments);
+    // }
+    // f(5);
+    // let a = ()=>{
+    //
+    // }
+    setTimeout(function () {
+        console.log("dwd")
+    },1000);
+    setTimeout(function () {
+        console.log("qwwweee")
+    },1000)
+</script>
+</body>
+</html>

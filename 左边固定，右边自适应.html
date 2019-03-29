@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*.wrapper {*/
+            /*padding: 15px 20px;*/
+            /*border: 1px dashed #ff6c60;*/
+        /*}*/
+        /*.left {*/
+            /*width: 120px;*/
+            /*border: 5px solid #ddd;*/
+        /*}*/
+        /*.right {*/
+            /*margin-left: 20px;*/
+            /*border: 5px solid #ddd;*/
+        /*}*/
+        /*第1种写法*/
+        *{padding: 0;margin:0;}
+        .left{width:100px;
+            height:100px;
+            float:left;
+            background-color:yellow;
+        }
+        .right{
+            margin-left:100px;
+            height:100px;background-color:#666;}
+        /*第2种写法*/
+
+        /**{padding: 0;margin:0;}*/
+        /*.left{position: absolute; top:0; left:0; width:200px; background: #ff0;height: 100px;}*/
+        /*.right input{width: 100%;    box-sizing: border-box;}*/
+        /*.right{height:100px;background-color:#666;margin-left: 200px;}*/
+    </style>
+</head>
+<body>
+<!--<div class="wrapper" id="wrapper">-->
+    <!--<div class="left">-->
+        <!--左边固定宽度，高度不固定 </br> </br></br></br>高度有可能会很小，也可能很大。-->
+    <!--</div>-->
+    <!--<div class="right">-->
+        <!--这里的内容可能比左侧高，也可能比左侧低。宽度需要自适应。</br>-->
+        <!--基本的样式是，两个div相距20px, 左侧div宽 120px-->
+    <!--</div>-->
+<!--</div>-->
+<div class="container">
+    <span class="left"></span>
+    <div class="right"></div>
+</div>
+</body>
+</html>

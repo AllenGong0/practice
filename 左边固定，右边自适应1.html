@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer{position: relative;height:150px; border: 1px solid red;}
+        .sidebar{position: absolute;left: 0;top:0;width:200px;height:100%;background: #BCE8F1;}
+        .content{margin-left:200px;height:100px;background: #F0AD4E;}
+        #w{
+            width: 100px;
+            position: absolute;
+
+        }
+        #D{
+            background-color: #cd0000;
+            margin-left:100px ;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="sidebar">固定宽度区(sideBar)</div>
+    <div class="content">自适应区(content)</div>
+</div>
+<div class="footer">footer</div>
+<div id="w">wqe</div>
+<div id="D">iop</div>
+<div>wdq</div>
+<script>
+    let a = "sasdswwooo";
+    let sum =0;
+    let arr = [];
+    let j=0;
+    for (let i=0;i<a.length;i++){
+        if (a.charAt(i)==='o'){
+            sum++;
+            arr[j]=i;
+            j++;
+        }
+    }
+    console.log(sum)
+    console.log(arr)
+</script>
+</body>
+</html>

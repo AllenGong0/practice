@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            vertical-align:top;
+        }
+        .dis{
+            background-color: #cd0000;
+            width: 200px;
+            /*display: inline-table;*/
+            /*display: inline-list-item;*/
+            /*display: inline-flex;*/
+        }
+        .chliren{
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="dis">
+    qwe
+    <div class="chliren">45</div>
+    <div class="chliren">45</div>
+    <div class="chliren">45</div>
+</div><div class="dis">
+qwe
+</div><div class="dis">
+qwe
+</div><div class="dis">
+qwe
+</div><div class="dis">
+qwe
+</div>
+<script>
+    function dfs(trees,name){
+        // 请在这里实现
+        let newName = null;
+        if (trees.name===name){
+            newName = trees
+        }
+        else {
+            trees.children.map(function (item) {
+                if (item.name===name){
+                    newName = item;
+                }else {
+                    item.children.map(function (temp) {
+                        if (temp.name===name){
+                            newName = temp;
+                        }
+                    })
+                }
+            })
+        }
+        return newName;
+    }
+
+    var tree = {
+        name : '中国',
+        children : [
+            {
+                name : '北京',
+                children : [
+                    {
+                        name : '朝阳群众'
+                    },
+                    {
+                        name : '海淀区'
+                    },
+                    {
+                        name : '昌平区'
+                    }
+                ]
+            },
+            {
+                name : '浙江省',
+                children : [
+                    {
+                        name : '杭州市',
+                        code : "0571",
+                    },
+                    {
+                        name : '嘉兴市'
+                    },
+                    {
+                        name : '绍兴市'
+                    },
+                    {
+                        name : '宁波市'
+                    }
+                ]
+            }
+        ]
+    };
+
+    var node = dfs(tree,'中国');
+    console.log(node);    // { name: '杭州市', code: 0571 }
+</script>
+</body>
+</html>

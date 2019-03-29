@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--z国的货币包含面值1元4元16元64元共计4中硬币以及面值为1024的纸币-->
+<!--用1024纸币购买0-1024的商品 会收到多少硬币-->
+有1024元
+</body>
+<script>
+    alert(`<input type="input">`)
+    function sum(num) {
+        let count = 0;
+        let sum = 0
+        let a,b,c,d;
+        a = (1024-200)%64;
+        b = (1024-a*64)%16;
+        c = (1024-a*64-b*16)%4;
+        d = (1024-a*64-b*16-c*4)%1;
+        console.log(a,b,c,d)
+        console.log(a+b+c+d);
+            // console.log(i%64);
+    }
+    sum(0)
+</script>
+</html>

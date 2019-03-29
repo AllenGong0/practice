@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="load()">
+    重新加载
+</button>
+<script>
+    function load() {
+
+        location.reload();
+        //默认调用不传递参数，如果上次请求以来并没有改变过页面就会从浏览器缓存中加载，
+
+        // location.reload(true)//强制从服务器端加载
+    //
+    }
+</script>
+</body>
+</html>
