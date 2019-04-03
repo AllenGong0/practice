@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <ul id="OUL" onclick="ale()">
+        <li>dw</li>
+        <li>ui</li>
+        <li>ko</li>
+    </ul>
+</div>
+<div id="divNode">
+
+</div>
+<script>
+    let Ul = document.getElementById("OUL")
+    console.log(Ul.cloneNode(true))
+
+    console.log(Ul.cloneNode(false))
+    let newNode = Ul.cloneNode(true);
+
+    let divNode = document.getElementById("divNode");
+    divNode.appendChild(newNode);
+    function ale() {
+        console.log(event.target)
+    }
+</script>
+</body>
+</html>
