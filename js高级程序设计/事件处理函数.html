@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<button id="Btn">按钮</button>
+<body>
+<script>
+    let Obt = document.getElementById("Btn");
+    // function a(){
+    //     console.log("asda");
+    //     console.log(this)
+    // }
+    let a =function(){
+        console.log("asda");
+        console.log(this)
+    }
+    // let a = ()=>{
+    //     console.log("sda")
+    //     console.log(this)
+    // }
+    Obt.addEventListener('click',a,false)
+    Obt.removeEventListener('click',a,false);
+</script>
+</body>
+</html>
