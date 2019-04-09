@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var request = window.indexedDB.open("test", "1.0");
+    //打开数据库失败
+    request.onerror = function (event) {
+        console.log('数据库打开报错');
+    };
+    //成功打开数据库
+    var db;
+    request.onsuccess = function (event) {
+        console.log(event)
+        db = request.result;
+        add();
+        add1();
+        read();
+
+        console.log(db);
+        console.log('数据库打开成功');
+    };
+    //升级数据库
+    // request.onupgradeneeded = function (event) {
+    //     db = event.target.result;
+    // }
+
+    request.onupgradeneeded = function(event) {
+        db = event.target.result;
+        var objectStore;
+        if (!db.objectStoreNames.contains('person')) {
+            objectStore = db.createObjectStore('person', {keyPath:'id'});
+            objectStore.createIndex('name', 'name', { unique: false });
+            objectStore.createIndex('age', 'age', { unique: false });
+            objectStore.createIndex('email', 'email', { unique: true });
+            // objectStore.createIndex('wwww', 'email', { unique: true });
+        }
+    }
+
+    function add() {
+        var request = db.transaction(['person'], 'readwrite')
+            .objectStore('person')
+            .add({id:2,name: '张三', age: 24, email: 'lisi@example.com' });
+
+        request.onsuccess = function (event) {
+            console.log(event)
+            console.log('数据写入成功');
+        };
+
+        request.onerror = function (event) {
+            console.log('数据写入失败');
+            console.log(event)
+
+        }
+    }
+
+    function add1() {
+        var request = db.transaction(['person'], 'readwrite')
+            .objectStore('person')
+            .add({id:3,name: '李四', age: 35, email: 'jijii@example.com' });
+
+        request.onsuccess = function (event) {
+            console.log(event)
+            console.log('数据写入成功');
+        };
+
+        request.onerror = function (event) {
+            console.log('数据写入失败');
+            console.log(event)
+
+        }
+    }
+
+    function read() {
+        var transaction = db.transaction(['person']);
+        var objectStore = transaction.objectStore('person');
+        var request = objectStore.
+                    get(3);
+        //            delete("主键")
+
+        request.onerror = function(event) {
+            console.log('事务失败');
+        };
+
+        request.onsuccess = function( event) {
+            if (request.result) {
+                console.log('Name: ' + request.result.name);
+                console.log('Age: ' + request.result.age);
+                console.log('Email: ' + request.result.email);
+            } else {
+                console.log('未获得数据记录');
+            }
+        };
+    }
+
+    // read();
+
+</script>
+</body>
+</html>
