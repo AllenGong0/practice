@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #cas {
+            display: block;
+            background-color: black;
+            margin: auto;
+            border: 1px solid;
+        }
+    </style>
+    <title>星星乱撞</title>
+</head>
+<body>
+<div>
+    <canvas id="cas" width="800" height="600">浏览器不支持canvas</canvas>
+</div>
+
+<script>
+
+    var testBox = function () {
+        var canvas = document.getElementById("cas"),
+            ctx = canvas.getContext('2d'),
+            colors = [],
+            Stars = []; //星数组
+
+        function getZ(n) {
+            var r;
+            r = (0.5 + n) | 0;
+            r = ~~(0.5 + n);
+            r = (0.5 + n) << 0;
+            return r;
+        }
+
+        function getRandom(a, b) {//设置基础数值
+            return Math.random() * (b - a) + a;
+        }
+
+        var star = function (x, y, vx, vy, useCache) {//设置星星
+            this.x = x;
+            this.y = y;
+            this.vx = vx;
+            this.vy = vy;
+            this.R = getZ(getRandom(10, 20));//设置每个星的随机半径  20<=r<=40
+            this.r = this.R / 2;
+
+            this.rot = getRandom(0, 360);
+            this.cacheCanvas = document.createElement("canvas");//每个星星重新获取了一次画布
+            this.cacheCtx = this.cacheCanvas.getContext("2d");
+            this.cacheCanvas.width = 2 * this.R;
+            this.cacheCanvas.height = 2 * this.R;
+            this.cacheCtx.fillStyle = "#faff26";
+            this.useCache = useCache;
+
+            this.cache();
+        }
+        star.prototype = {
+            paint: function () {
+                ctx.drawImage(this.cacheCanvas, this.x - this.r, this.y - this.r);
+            },
+            cache: function () {
+                this.cacheCtx.save();
+                for (var i = 0; i < 5; i++) {
+                    this.cacheCtx.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * this.R + this.R,
+                        -Math.sin((18 + i * 72) / 180 * Math.PI) * this.R + this.R);
+                    this.cacheCtx.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * this.r + this.R,
+                        -Math.sin((54 + i * 72) / 180 * Math.PI) * this.r + this.R);
+                }
+                this.cacheCtx.fill();
+                this.cacheCtx.restore();
+            },
+            move: function () {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x > (canvas.width - this.R) || this.x < this.R) {
+                    this.x = this.x < this.R ? this.R : (canvas.width - this.R);
+                    this.vx = -this.vx;
+                }
+                if (this.y > (canvas.height - this.R) || this.y < this.R) {
+                    this.y = this.y < this.R ? this.R : (canvas.height - this.R);
+                    this.vy = -this.vy;
+                }
+                this.paint(ctx);//绘画
+            }
+        }
+        var Game = {
+            init: function () {//添加星星到数组
+                for (var i = 0; i < 200; i++) {
+                    var s = new star(getRandom(0, canvas.width), getRandom(0, canvas.height), getRandom(-10, 10), getRandom(-10, 10), true)
+                    Stars.push(s);
+                }
+            },
+            update: function () {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                var grd = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                grd.addColorStop(0, "#000");
+                grd.addColorStop(1, "#248cf4");
+                ctx.fillStyle = grd;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                for (var i = 0; i < Stars.length; i++) {
+                    Stars[i].move();
+                }
+            },
+            loop: function () {
+                var _this = this;
+                _this.update();
+                RAF(function () {
+                    _this.loop();//定时器到时间，就继续清空画布 更改球的位置 重新绘制画布
+                })
+            },
+            start: function () {
+                for (var i = 0; i < 100; i++) {
+                    colors.push("rgba(" + getZ(getRandom(0, 255)) + "," + getZ(getRandom(0, 255)) + "," + getZ(getRandom(0, 255)) + ",1)");
+                }
+                this.init();//添加星到数组
+                this.loop();//设置完成后开启定时器
+            }
+        }
+
+        window.RAF = (function () {//设置一直改变的计时器
+            return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
+                window.setTimeout(callback, 1000 / 60);
+            };
+        })();
+
+        return Game;
+    }();
+
+
+    window.onload = function () {
+        testBox.start();
+    }
+</script>
+
+</body>
+</html>

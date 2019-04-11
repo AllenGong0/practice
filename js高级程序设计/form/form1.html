@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function formSubmit()
+        {
+            document.getElementById("myForm").submit()
+            alert("提交成功")
+        }
+    </script>
+</head>
+
+<body>
+<p>在下面的文本框中输入一些文本，然后点击提交按钮就可以提交表单。</p>
+
+<form id="myForm" action="/i/eg_smile.gif" method="get">
+<!--    名：<input type="text" disabled name="firstname" size="20"><br />-->
+    名：<input type="text" name="firstname" size="20"><br />
+    姓：<input type="text" name="lastname" size="20"><br />
+    <br />
+    <input type="button" onclick="formSubmit()"  id="qwe" value="提交">
+    <input type="button" onclick="formSubmit()"  id="asd" value="提交">
+</form>
+</body>
+<script>
+    let btn = document.getElementById("qwe");
+    console.log(btn.type)
+    btn.onclick = function () {
+        // alert("提交");
+        // btn.setAttribute('disabled',true)
+    }
+    let asd = document.getElementById("asd");
+    asd.onclick = function () {
+        btn.removeAttribute('disabled')
+    }
+
+//    不能用click事件处理程序来触发disabled属性，不同浏览器之间存在“时差”，
+    //    有的浏览器会在触发表单的submit事件之前触发click事件，有的浏览器相反。
+    //    因此最好是通过submit事件来禁用提交按钮。
+
+</script>
+</html>
