@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import Greeting from './PropTypes'
 function App() {
   return (
     <div className="App">
@@ -18,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <Greeting name={25}/>
       </header>
     </div>
   );
