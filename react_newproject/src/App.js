@@ -2,6 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Greeting from './PropTypes'
+// eslint-disable-next-line
+import MyRef from './MyRef';
+import CustomTextInput from './CustomTextInput';
 function App() {
   return (
     <div className="App">
@@ -19,6 +22,7 @@ function App() {
           Learn React
         </a>
         <Greeting name={25}/>
+        <CustomTextInput />
       </header>
     </div>
   );
