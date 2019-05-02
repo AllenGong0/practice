@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [1,2,3,2,2,2,5,4,2];
+    let obj ={};
+    let max=0;
+    for (let i=0;i<arr.length;i++){
+        if (obj.hasOwnProperty(arr[i])) {
+            obj[arr[i]]++;
+        }else{
+            obj[arr[i]] = 1
+        }
+    }
+    for(let index in obj){
+        if (obj[index]>arr.length/2) {
+            max=obj[index]
+        }
+    }
+    console.log(max)
+</script>
+</body>
+</html>
