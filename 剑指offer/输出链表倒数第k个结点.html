@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function LinkedList () {
+        //辅助类 表示要加入链表的项
+        var Node = function (element) {
+            this.element = element;
+            this.next = null; //指向链表中下一个节点项的指针
+        };
+        let length = 0;
+        let head = null;
+        this.append = function (element) {
+            var node = new Node(element),current;
+            if(head===null){
+                head = node;
+                // console.log(head)
+            }else{
+                current = head;
+                while (current.next!=null){
+                    current = current.next;
+                }
+                current.next = node;
+            }
+            length++;
+        }; //向链表尾部添加一个新的项
+        this.print = function (k) {
+            var current=head;
+            let len = length-k+1;
+            let i=0;
+            while (i<len){
+                i++;
+                current=current.next;
+            }
+            console.log(0)
+            // var arr = [];
+            // while(head!=null){
+            //     arr.push(head);
+            //     head = head.next;
+            // }
+            // return arr[arr.length-k];
+        }; //打印元素的值
+    }
+    var link = new LinkedList();
+    for (let i=0;i<5;i++){
+        link.append(i);
+    }
+
+    // link.insert(2,"78789")
+    // link.remove(2)
+    link.print(2)
+    link.print(6)
+</script>
+</body>
+</html>
