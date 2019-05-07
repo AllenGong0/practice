@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function f(name,age) {
+        this.name=name;
+        this.age = age;
+    }
+    let obj = new f("zs",20);
+    console.log(f.prototype);//prototype指向构造函数
+    console.log(obj.constructor);
+</script>
+</body>
+</html>

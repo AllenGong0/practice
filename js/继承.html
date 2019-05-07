@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function person(name,age) {
+        console.log(this)
+        this.name=name;
+        this.age=age;
+    }
+    function coder(name,age) {
+        person.call(this,name,age)
+    }
+    var coder1 = new coder('sd',55,789)
+    console.log(coder1)
+</script>
+</body>
+</html>
