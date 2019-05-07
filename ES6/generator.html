@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function* gen() {
+    //     yield 5;
+    //     console.log("第一次")
+    //     yield 6;
+    //     console.log("第2次")
+    //     yield 7;
+    //     console.log("第3次")
+    //     yield 8;
+    //     console.log("第4次")
+    //     return 0;
+    // }
+    // var ge = gen();
+    // console.log(ge.next())
+    // console.log(ge.next())
+    // console.log(ge.next())
+    // console.log(ge.next())
+    // console.log(ge.next())
+
+
+    // 生产自增id
+    function* current_id() {
+            console.log('开始');
+            let x = yield console.log('11111');
+            console.log('2222');
+            console.log(x);
+            console.log('继续执行');
+            return '结束！';
+    }
+    //每调用一次next方法都停在当前yield，传参数传给的是上一次的yield
+    let cur_id =current_id();
+    cur_id.next()
+    cur_id.next("555")
+    cur_id.next()
+</script>
+</body>
+</html>

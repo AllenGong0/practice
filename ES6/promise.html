@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a=0;
+    let pro = new Promise(function (resolve, reject) {
+        if (a!==0){
+            resolve()
+        } else {
+            reject()
+        }
+    });
+    pro.then(function () {
+        console.log("sss")
+    }).catch(function () {
+        console.log("error");
+    });
+    console.log(pro)
+</script>
+</body>
+</html>
