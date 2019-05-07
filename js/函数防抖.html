@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="oBt" onclick="cc()">点击</button>
+<script>
+    // 无论多少次点击，只执行最后一次
+    function cli() {
+        var deferTime;
+        var last;
+        return function(){
+            console.log("last:"+last)
+            var now = +new Date();
+            console.log("now:"+now)
+            console.log(now-last)
+                clearTimeout(deferTime)
+                deferTime = setTimeout(()=>{
+                    last = now;
+                    console.log("scas")
+                },2000);
+                console.log("执行定时器");
+                console.log("执行完的Last:"+last)
+            // clearTimeout(deferTime)
+        }
+    }
+
+    var cc= cli();
+    // oBt.addEventListener('click',function () {
+    //     cc();
+    // });
+
+
+
+    //  function cli() {
+    //      var a=0;
+    //      return function () {
+    //          console.log(a);
+    //          a=5;
+    //      }
+    //  }
+    //  console.log(cc)
+    //  cc();
+    //  cc();
+</script>
+</body>
+</html>
