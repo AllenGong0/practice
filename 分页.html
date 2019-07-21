@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #pageBar ul li{
+            float: left;
+            list-style: none;
+            border: 1px gray solid;
+            margin-left: 5px;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: #61dafb;
+            cursor:pointer;
+        }
+        li:hover{
+            background-color: red;
+        }
+        li:active{
+            background-color: #F0AD4E;
+        }
+        .cl{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<div id="content"></div>
+<div id="pageBar">
+    <ul id="pageBarUl">
+
+    </ul>
+</div>
+
+<body>
+<script>
+    let pageBar = document.getElementById("pageBarUl");
+    // let tesArr = ["qwe","asd","rff","gref","gregw","grg"]
+    let tesArr = []
+    let previousUL = `<li>上一页</li>`
+    let nextUL = `<li>下一页</li>`;
+    let allPage = "";
+    for (let i=1;i<=tesArr.length;i++){
+        if (i===1){
+            allPage += `<li class="cl" value=${i}>${i}</li>`
+        } else {
+            allPage += `<li  value= ${i}>${i}</li>`
+        }
+
+     }
+    let content = document.getElementById("content");
+    content.innerText = tesArr[0];
+    pageBar.onclick = function(e){
+            console.log(e.target);
+        let index  = e.target.value;
+            console.log(index);
+        content.innerText = tesArr[index-1];
+        let allLi =  pageBar.getElementsByTagName("li");
+        for (let i = 0;i<allLi.length;i++){
+            allLi[i].classList.remove("cl");
+        }
+        allLi[index].classList.add("cl")
+    }
+    pageBar.innerHTML = previousUL + allPage + nextUL;
+
+
+
+</script>
+</body>
+</html>
