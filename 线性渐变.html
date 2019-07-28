@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*body{*/
+        /*    !*background-image: ;*!*/
+
+        /*    background-image: linear-gradient(to right top, #61dafb 70%, #eee 50%);*/
+        /*    background-repeat: no-repeat;*/
+        /*}*/
+        #linearGradient{
+            width: 500px;
+            /*height: 500px;*/
+            background-repeat: no-repeat;
+            background: #F0AD4E;
+            animation:lin_grad 2s linear;
+
+        }
+        #linearGradient:hover{
+            /*animation:lin_grad 2s linear;*/
+        }
+        @keyframes lin_grad {
+            from{
+                height: 50px;
+                /*background-image: linear-gradient(to right top ,#61dafb 0, #eee 0 );*/
+            }
+            to{
+                height: 500px;
+                /*background-image: linear-gradient(to right top ,#61dafb 100%, #eee 100% );*/
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="linearGradient"></div>
+</body>
+</html>
