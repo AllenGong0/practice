@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            height: 160px;
+            padding: 30px;
+            background: #61dafb;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .child{
+            height: 100%;width: 100%;
+            /*top: 0;*/
+            /*left: 0;*/
+            background: #000000;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="child"></div>
+</div>
+绝对定位元素宽高比是相对于padding-box的，非绝对定位元素相对于content-box计算
+</body>
+</html>

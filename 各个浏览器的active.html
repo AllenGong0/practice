@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #App{
+        }
+        #App:active{
+            color: #61dafb;
+        }
+    </style>
+</head>
+<body>
+    <a id="App">qwe</a>
+    <script>
+       let butA = document.getElementById("App");
+       butA.addEventListener('mousedown',function () {
+           event.preventDefault();
+       })
+    </script>
+</body>
+</html>
