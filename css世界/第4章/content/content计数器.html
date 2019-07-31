@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .counter{
+            counter-reset: wangxiaoer  wangxiaosan 3;
+            counter-increment: wangxiaoer;
+        }
+        .counter:before {
+            content: counter(wangxiaoer);
+            counter-increment: wangxiaoer;
+        }
+        /*.counter:after {*/
+        /*    content: counter(wangxiaosan);*/
+        /*}*/
+        .qwe{
+        }
+        .qwe:before{
+            content: counter(wangxiaoer);
+            counter-increment: wangxiaoer;
+
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="counter"><div class="qwe">qwe</div>王小二</div>
+<div class="counter">王小二</div>
+</body>
+</html>
