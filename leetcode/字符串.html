@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str  = ["cba", "daf", "ghi"];
+    let sum = 0;
+    let char_len = str[0].length;
+    for (let j=0;j<char_len;j++){
+        let flag = false;
+        for (let i=0;i<str.length-1;i++){
+            if (str[i].charAt(j)>str[i+1].charAt(j)) {
+                console.log(str[i].charAt(j))
+                console.log(str[i+1].charAt(j))
+                flag = true;
+                break;
+            }
+        }
+        if (flag){
+            sum++;
+        }
+    }
+    console.log(sum)
+</script>
+</body>
+</html>

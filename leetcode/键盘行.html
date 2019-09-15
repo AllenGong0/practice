@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let up = 'qwertyuiop';
+    let mid = 'asdfghjkl';
+    let down = 'zxcvbnm';
+    let str = ["Hello", "Alaska", "Dad", "Peace"];
+    let arr = [];
+    for (let i=0;i<str.length;i++){
+        let str_now = str[i].toLowerCase();
+        let now_char = str_now.charAt(0);
+        let tmp_str = '';
+        let flag = true;
+        if (up.indexOf(now_char)!==-1){
+            tmp_str = up;
+        }  else if(mid.indexOf(now_char)!==-1){
+            tmp_str = mid;
+        }else {
+            tmp_str = down;
+        }
+        console.log(tmp_str)
+        for (let j=1;j<str_now.length;j++){
+            if (tmp_str.indexOf(str_now.charAt(j))===-1){
+                 flag =false;
+                 break;
+            }
+        }
+        if (flag){
+            arr.push(str[i])
+        }
+    }
+    console.log(arr)
+</script>
+</body>
+</html>

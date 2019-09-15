@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function getNumber(a){
+        switch (a) {
+            case 'I':
+                return 1;
+            case 'V':
+                return 5;
+            case 'X':
+                return 10;
+            case 'L':
+                return 50;
+            case 'C':
+                return 100;
+            case 'D':
+                return 500;
+            case 'M':
+                return 1000;
+        }
+    }
+
+    let  s = "MCMXCIV";
+    let sum = 0;
+    let len = s.length;
+    for (let i=0;i<len;i++){
+        let now_num = getNumber(s.charAt(i));
+        let next_num;
+        if (i+1<len){
+            next_num = getNumber(s.charAt(i+1));
+            if (now_num < next_num){
+                sum += (next_num-now_num);
+                i++;
+            } else {
+                sum += now_num;
+            }
+        } else {
+            sum += now_num;
+        }
+    }
+    console.log(sum)
+</script>
+</body>
+</html>
