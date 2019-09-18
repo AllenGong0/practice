@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function minNumberInRotateArray(arr) {
+        let n = arr.length,min = Number.MAX_VALUE;
+        if (n===0){
+            return 0;
+        }
+        for (let i=0;i<n;i++){
+            if (arr[i]<min){
+                min = arr[i]
+            }
+        }
+        console.log(min)
+    }
+    let arr = [3,4,5,1,2]
+    minNumberInRotateArray(arr)
+</script>
+</body>
+</html>

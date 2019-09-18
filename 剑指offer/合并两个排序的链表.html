@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function ListNode(val) {
+        this.val = val;
+        this.next = null;
+    }
+
+
+    //递归版本
+    // function Merge(Head1,Head2) {
+    //   if (Head1 === null&&Head2!==null){
+    //       return Head2
+    //   }else if (Head2 === null&&Head1!==null){
+    //       return Head1
+    //   }
+    //   let Head = new ListNode();
+    //   if (Head1.val>Head2.val){
+    //       Head.val = Head2.val;
+    //       Head.next = Merge(Head1,Head2.next)
+    //   }else {
+    //       Head.val = Head1.val;
+    //       Head.next = Merge(Head1.next,Head2)
+    //   }
+    //   return Head;
+    // }
+
+    //非递归版本   和递归思想相同只不过将递归更改未while，每次将最小数字放入新链表中，res = res.next = Head1/Head2
+    // 很巧妙的解决了如何给链表赋值的问题  每次将res.next指向新节点，那么res.next值即为最新的最小值。最后取得res.next即为合并后的链表
+    function Merge(Head1,Head2){
+        let Head = new ListNode();
+        let res = Head;
+        while (Head1!==null&&Head2!==null){
+            if (Head1.val>Head2.val){
+                res= res.next = Head2
+                // res = Head2
+                // res = res.next
+                Head2 = Head2.next;
+            }else {
+                res= res.next = Head1
+                // res = Head1;
+                // res = res.next
+                Head1 = Head1.next;
+            }
+        }
+        if (Head1 !== null&&Head2==null){
+            res.next = Head1;
+        }else if(Head2 !== null&&Head1==null) {
+            res.next = Head2;
+        }
+        return Head.next
+    }
+
+
+    let Head1 = new ListNode(2);
+    Head1.next  = new ListNode(4);
+    Head1.next.next  = new ListNode(6);
+    // Head1.next.next.next = new ListNode(16);
+    // Head1.next.next.next.next = new ListNode(18);
+
+    let Head2 = new ListNode(1);
+    Head2.next  = new ListNode(3);
+    Head2.next.next  = new ListNode(5);
+    Head2.next .next.next = new ListNode(8);
+    console.log(Merge(Head1,Head2))
+</script>
+</body>
+</html>

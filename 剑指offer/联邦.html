@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function ListNode(val) {
+        this.val = val;
+        this.next = null;
+    }
+    let Head1 = new ListNode(1);
+    Head1.next  = new ListNode(3);
+    Head1.next.next  = new ListNode(5);
+    // Head1.next .next.next = new ListNode(4);
+    let new_node = new ListNode(6);
+    new_node.next = Head1.next;
+    Head1.next = new_node;
+    console.log(Head1);
+    // let Head2 = new ListNode(2);
+    // Head2.next  = new ListNode(4);
+    // Head2.next.next  = new ListNode(6);
+    // // Head2.next .next.next = new ListNode(8);
+    // console.log(Merge(Head1,Head2))
+</script>
+</body>
+</html>

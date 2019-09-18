@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let stacks = ["ww"],stack2 = [];
+    // let Array =
+    Array.prototype.stack_push = function (a) {
+        this.push(a);
+    }
+    stacks.stack_push(5)
+    stacks.stack_push(6)
+    stacks.stack_push(7)
+    // console.log(stacks)
+    Array.prototype.queue_pop = function () {
+        let stack0 = [];
+        for (let i=this.length-1;i>=0;i--){
+            stack0.stack_push(this.pop());
+        }
+         stack0.pop();
+        while (stack0.length!==0){
+            this.push(stack0.pop())
+        }
+    }
+    stacks.queue_pop()
+    console.log(stacks)
+</script>
+</body>
+</html>

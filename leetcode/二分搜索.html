@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a  = [5,8,13,16,19,22,35,40];
+    let num = 8;
+    function findNum(arr,left,right,num) {
+        let mid = parseInt((right-left+1)/2);
+        if (num>arr[mid]){
+           return  findNum(arr,mid+1,right,num)
+        }else if (num<arr[mid]){
+           return  findNum(arr,left,mid-1,num)
+        }else {
+            return mid
+        }
+
+    }
+    console.log(findNum(a,0,a.length-1,8))
+
+
+</script>
+</body>
+</html>
