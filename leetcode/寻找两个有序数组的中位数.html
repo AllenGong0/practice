@@ -6,28 +6,22 @@
 </head>
 <body>
 <script>
-  // function findMedianSorteArrays(A,B) {
-  //
-  //     //A长度定位m  B长度定位n  且j = (m+n+1)/2  要保证j>=0  所以要保证n>=m;
-  //     if (A.length>B.length){
-  //         let tmp = A;A = B;B = A;
-  //     }
-  //     let m = A.length,n = B.length;
-  //     let imin = 0,imax = m,halfLen = (m+n+1)/2
-  //     while (imin<=imax){
-  //         let i = (imin+imax)/2;
-  //         let j = halfLen - i;
-  //         if (i<imax&&B[j-1]>A[i]){
-  //             imin = i+1;
-  //         }else if (i>imin&&A[i-1]>B[j]){
-  //             imax = i-1;
-  //         }else {
-  //             console.log(B[i-1]);
-  //             console.log(B[i]);
-  //         }
-  //     }
-  // }
-  // findMedianSorteArrays([1,2,3,4],[5,6,7,8])
+  /*
+      将数组较短的赋给arrA，数组较长的赋给数组arrB
+       将数组A和数组B分成两部分
+
+                left_part                |            right_part
+                left A                   |            right A
+        arrA[0],arrA[1],...,arrA[i-1]    |  arrA[i],arrA[i+1],...,arrA[m];
+                left B                   |            right B
+        arrB[0],arrB[1],...,arrB[j-1]    |   arrB[j],arrB[j+1],...,arrB[n]
+
+        令左右部分长度,中位数即为：(max(arrA[i-1],arrB[j-1])+min(arrA[i],arrB[j]))/2
+        判断特殊情况，今天下班，明天更新
+
+
+
+   */
 
     function findMedia(arrA,arrB) {
 
@@ -83,8 +77,8 @@
     }
     // let a = [1,2,3,4],b=[5,6,7,8]
     // let a = [1,2,5,6],b=[3,4,7,8]
-    // let a = [],b=[3,4,7,8]
-    let a = [2],b=[]
+    let a = [],b=[3,4,7,8]
+    // let a = [2],b=[]
     console.log(findMedia(a,b))
 </script>
 
