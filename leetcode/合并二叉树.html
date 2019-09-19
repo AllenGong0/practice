@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function TreeNode(val) {
+        this.val = val;
+        this.left = this.right = null;
+    }
+    let treeA = new TreeNode(1);
+    treeA.left = new TreeNode(3)
+    treeA.right = new TreeNode(2)
+    treeA.left.left = new TreeNode(5)
+    let treeB = new TreeNode(2);
+    treeB.left = new TreeNode(1);
+    treeB.left.right = new TreeNode(4);
+    treeB.right = new TreeNode(3);
+    treeB.right.right = new TreeNode(7);
+    console.log(treeA);
+    console.log(treeB);
+
+    function MergeTree(TreeA,TreeB) {
+        if (TreeB==null){
+            return TreeA;
+        } else if (TreeA==null){
+            return TreeB;
+        }
+        let node = TreeA.val+TreeB.val;
+        let new_node = new TreeNode(node);
+        console.log(new_node)
+        new_node.left = MergeTree(TreeA.left,TreeB.left);
+        new_node.right = MergeTree(TreeA.right,TreeB.right)
+        return new_node;
+    }
+    console.log(MergeTree(treeA,treeB))
+</script>
+</body>
+</html>
