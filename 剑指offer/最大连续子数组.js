@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<script>
-    /**
-     *
-     * @param n
-     * @param arr
-     * @returns {number}
-     */
+
     //题目为求最大连续子数组
     //记录上次的和 如果当前值大于0  记录并在下一步和max去比较，选取其中较大的值为max
     //真的是自己菜了 ps:n是牛客网需要的 js本身并不需要
@@ -30,6 +17,3 @@
     let arr = [5,2,5,-1,6,5];
     let n = arr.length;
    console.log(maxSonArr(n,arr));
-</script>
-</body>
-</html>
