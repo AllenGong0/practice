@@ -13,22 +13,22 @@
 
 
     //递归版本
-    // function Merge(Head1,Head2) {
-    //   if (Head1 === null&&Head2!==null){
-    //       return Head2
-    //   }else if (Head2 === null&&Head1!==null){
-    //       return Head1
-    //   }
-    //   let Head = new ListNode();
-    //   if (Head1.val>Head2.val){
-    //       Head.val = Head2.val;
-    //       Head.next = Merge(Head1,Head2.next)
-    //   }else {
-    //       Head.val = Head1.val;
-    //       Head.next = Merge(Head1.next,Head2)
-    //   }
-    //   return Head;
-    // }
+    function Merge(Head1,Head2) {
+      if (Head1 === null){
+          return Head2
+      }else if (Head2 === null){
+          return Head1
+      }
+      let Head = new ListNode();
+      if (Head1.val>Head2.val){
+          Head.val = Head2.val;
+          Head.next = Merge(Head1,Head2.next)
+      }else {
+          Head.val = Head1.val;
+          Head.next = Merge(Head1.next,Head2)
+      }
+      return Head;
+    }
 
     //非递归版本   和递归思想相同只不过将递归更改未while，每次将最小数字放入新链表中，res = res.next = Head1/Head2
     // 很巧妙的解决了如何给链表赋值的问题  每次将res.next指向新节点，那么res.next值即为最新的最小值。最后取得res.next即为合并后的链表

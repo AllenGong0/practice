@@ -6,13 +6,22 @@
 </head>
 <body>
 <script>
-
-    //中序遍历   根左右
-    let s = [];
     function TreeNode(val) {
         this.val = val;
         this.left = this.right = null;
     }
+
+    let invertTree = function (root) {
+        let tree = new TreeNode(root.val);
+        if (root.right !== null) {
+            tree.left = invertTree(root.right);
+        }
+        if (root.left !== null) {
+            tree.right = invertTree(root.left);
+
+        }
+        return tree;
+    };
     let treeA = new TreeNode(2);
     treeA.left = new TreeNode(1);
     treeA.left.left = new TreeNode(5);
@@ -24,18 +33,8 @@
     treeA.right.right = new TreeNode(7);
     treeA.right.right.right = new TreeNode(9);
 
-    function sequenceTraversal(tree) {
-        let s = [];
-        s.push(tree.val);
-        if (tree.left!==null){
-           s.push(...sequenceTraversal(tree.left))
-        }
-        if (tree.right!==null){
-            s.push(...sequenceTraversal(tree.right))
-        }
-        return s;
-    }
-    console.log(sequenceTraversal(treeA))
+    console.log(treeA)
+    console.log(invertTree(treeA))
 </script>
 </body>
 </html>

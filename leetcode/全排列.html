@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /*
+    * 全排列，dfs
+    * first：
+    *          初始化一个book用于标识当前数字是否使用过  使用过则为1，未使用过，则为0
+    * second：
+    *           定义一个box，将每部的结果存到box中
+    *
+    * */
+
+    let arr = [1,2,3],book = [];
+    let n = arr.length;
+
+    //初始化book数组标识当前数组是否使用过
+    for (let j=0;j<n;j++){
+        book[j]=0;
+    }
+    let box = [],result = [],i=0;
+    dfs(0);
+    //arr->原数组  box->全排列后的数组
+    //step->排列到第几个盒子
+    function dfs(step) {
+        if (step === n){  //当排序到最后一个盒子的时候返回
+            return result.push([...box]);
+        }else{
+            for (let i=0;i<n;i++){
+                if (book[i]===0){
+                    box[step] = arr[i];
+                    book[i] = 1;
+                    dfs(step+1);
+                    book[i]=0;
+                }
+            }
+        }
+
+    }
+    console.log(result)
+</script>
+</body>
+</html>

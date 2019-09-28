@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [1,2,3,4,5];
+    let i=0;
+    console.log(getNumber(0))
+    function getNumber(i) {
+        if (i===arr.length-1){
+            return arr[i]
+        }else{
+            return getNumber(i+1)
+        }
+    }
+</script>
+</body>
+</html>

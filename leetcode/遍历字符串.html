@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //将大写字符放到后面，小写字符放到前面，不创建新的空间
+    let str = "asdAasAAdsdwAdwaB"
+
+    //第一种方式暴力解决
+    // for (let j=0;j<str.length;j++){
+    //     for (let i=0;i<str.length;i++){
+    //         let now_str = str.charAt(i);
+    //         let nex_str = str.charAt(i+1);
+    //         if (&&nex_str>='a'&&nex_str<='z'){
+    //             console.log(now_str)
+    //             console.log(nex_str)
+    //             let tmp = now_str;
+    //             str = str.substr(0,i) + nex_str +now_str + str.substr(i+2)
+    //         }
+    //     }
+    // }
+
+    //第二种：遍历字符串将大写字符放到后面，小写字符放到前面,控制循环次数，
+    let n = str.length;
+    for (let j=0,i=0;j<n;j++,i++){
+        let now_str = str.charAt(i);
+        if (now_str>='A'&&now_str<='Z') {
+            str = str.substr(0,i) + str.substr(i+1) + now_str;
+
+            console.log(str);
+        }
+    }
+    console.log(str)
+
+
+
+
+</script>
+</body>
+</html>
