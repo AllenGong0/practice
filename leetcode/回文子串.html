@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //动态规划问题 初始化dp数组
+    function longestPalindrome(str) {
+        let n = str.length;
+        if (n === 0) return "";
+        if (n === 1) return 1;
+        let longest = 1,start = 0,dp = [];
+
+        //初始化dp数组
+        for(let i = 0; i < n; i++){
+
+            //初始化，dp[i][i]必定是回文子串
+            let tmp = [];
+            tmp[i] = 1;
+            dp[i] = [...tmp];
+
+            //继而判断相邻两个字符是否是回文串，初始化dp[i][i+1]
+            if(str.charAt(i)===str.charAt(i+1)){
+                dp[i][i+1] = 1;
+                longest = 2;
+            }
+
+        }
+
+        //相邻两个字符已在初始化时判断完毕，所以j要从3开始
+        for (let j=3;j<=n;j++){  //枚举子串的长度
+            for (let q = 0;q < n;q++){
+                let end = j+q-1;
+                if (str.charAt(q)===str.charAt(end) && dp[q+1][end-1]===1){
+                    dp[q][end] = 1;
+                    longest = j
+                }
+            }
+        }
+
+        console.log(dp)
+        console.log(longest)
+    }
+
+    longestPalindrome("qqeqqaardaqadraa")
+</script>
+</body>
+</html>
