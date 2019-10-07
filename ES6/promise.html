@@ -6,20 +6,34 @@
 </head>
 <body>
 <script>
-    let a=0;
-    let pro = new Promise(function (resolve, reject) {
-        if (a!==0){
-            resolve()
-        } else {
-            reject()
-        }
+    // let a=0;
+    // let pro = new Promise(function (resolve, reject) {
+    //     if (a!==0){
+    //         resolve()
+    //     } else {
+    //         reject()
+    //     }
+    // });
+    // pro.then(function () {
+    //     console.log("sss")
+    // }).catch(function () {
+    //     console.log("error");
+    // });
+    // console.log(pro)
+
+
+    //传promise向then传值用resolve，then之间传值用return
+    let promise1 = new Promise((resolve, reject)=>{
+        console.log("qwe");
+        resolve('asd')
+    }).then((res)=>{
+       return res;
+    }).then((res)=>{
+        console.log(res)
+    }).finally((res)=>{
     });
-    pro.then(function () {
-        console.log("sss")
-    }).catch(function () {
-        console.log("error");
-    });
-    console.log(pro)
+    //promise有always，race，all
+
 </script>
 </body>
 </html>
