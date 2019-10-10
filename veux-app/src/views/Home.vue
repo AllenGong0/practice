@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <Counter></Counter>
 </template>
@@ -8,7 +9,7 @@ import Counter from './componentA'
 export default {
   name: 'home',
   components: {
-      Counter
+    Counter
   }
 }
 </script>
