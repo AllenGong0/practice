@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .fade-enter-active,.fade-leave-active{
+            transition: opacity .5s;
+        }
+        .fade-enter,.fade-leave-to{
+            opacity: 0;
+        }
+        .bounce-enter-active{
+            animation: bounce-in .5s;
+        }
+        .bounce-leave-active{
+            animation: bounce-in .5s reverse;
+        }
+        @keyframes  bounce-in{
+                0%{
+                    transform: scale(0);
+                }
+                50%{
+                    transform: scale(1.5);
+                }
+                100%{
+                    transform: scale(1);
+                }
+        }
+    </style>
+</head>
+<body>
+<div id="demo1">
+    <button @click="show=!show">Toggle</button>
+    <transition name="fade">
+        <p v-if="show">THIS IS TRANSITION</p>
+    </transition>
+<!--    enter-class="animated"  自定义类名 优先级高于普通类名
+        duration 定制一个显性的过渡时间，：duration="{enter:500,leave:800}"
+        transitioni
+        enter/leave
+        @before-enter="method",
+        @enter="method",
+        @after-enter="method",
+        @enter-cancel="method"
+
+        在只用JavaScript过渡时，在enter和leave中必须使用done进行回调，
+        否则他们会被同步调用，并立即完成
+        在过渡的元素添加：css=false vue会跳过对css的检测
+-->
+    <transition  :duration="100" enter-class="animated" name="bounce">
+        <p v-show="show">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Mauris facilisis enim libero, at lacinia diam fermentum id. Pellentesque habitant morbi tristique senectus et netus.</p>
+    </transition>
+</div>
+<script src="vue.js"></script>
+<script src="render.js"></script>
+</body>
+</html>
