@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var a = {b:10};
+    // var c = a;
+    // c.b = 8;
+    // var a = null;
+    // console.log(a,c) //null,{b:8} 因为第二次声明a是新声明的变量，
+                // 在内存中是个新的地址，所以并不会改变c的值
+
+    // var name = 'allen';
+    //
+    // var student = {
+    //     name:'lisa',
+    //     checkName: ()=> {
+    //         console.log(this.name);
+    //         return function () {
+    //             console.log(this.name)
+    //         }
+    //     }
+    // }
+    // var teacher = {
+    //         name:'tea',
+    //         student:student
+    // }
+    // var checkName = student.checkName();
+    // checkName()
+
+    function f(name,asd) {
+        this.name  = name;
+        this.asd = asd
+        console.log(this)
+    }
+    var newObj = new f('name','age')
+    // console.log(newObj)
+    let a = {
+        name:45,
+        scope: function() {
+            console.log(this)
+        }
+    }
+    function scope(){
+        console.log(this)
+    }
+    a.scope()
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function getParam (url, key) {
+    //     let params = url.split('?')[1].split('&');
+    //     let map = new Map(),res = undefined;
+    //     for(let i = 0; i<params.length; i++){
+    //         let tmpParams = params[i].split("=");
+    //         let tmpKey = tmpParams[0],tmpValue;
+    //         if(tmpParams.length===2){
+    //             tmpValue = tmpParams[1]
+    //         }else{
+    //             tmpValue = true
+    //         }
+    //         map.set(tmpKey,tmpValue)
+    //     }
+    //     print(map.get(tmpKey))
+    // }
+    // getParam()
+    //
+
+    let arr = [1,2,5,1,6,2,2]
+    function arrSot(arr) {
+        let map = new Map();
+        for (let i = 0;i<arr.length;i++)
+        {
+            if (map.has(arr[i])){
+                let tmp = map.get(arr[i]) + 1
+                map.set(arr[i],tmp)
+            }else {
+                map.set(arr[i],0)
+            }
+        }
+        let beforeSort = []
+        map.forEach((value, key)=>{
+            beforeSort.push({
+                value:value,
+                key:key
+            })
+        })
+        beforeSort.sort(function (a,b)
+        { if (a.value>=b.value){
+            return 1
+        }else {
+            return -1
+        }})
+    }
+    arrSot(arr);
+</script>
+</body>
+</html>
