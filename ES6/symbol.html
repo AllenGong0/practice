@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sy = Symbol()
+        let obj = {
+            [sy]:'qwe',
+            sy:'asd',
+        }    
+        console.log(obj)
+
+        //symbol 值表示独一无二的值 symbol值与其他值进行换算，会报错
+
+        let s = Symbol('thisSymbol');
+        console.log(s.description)   //返回的是symbol的表述 ：thisSymbol
+        
+        //注：Symbol值作为对象属性名时，不能用点运算符 在使用Symbol值作为对象属性时，
+        //    必须将Symbol值放在方括号内，不放在方括号内，代表的就是字符串
+    </script>
+</body>
+</html>

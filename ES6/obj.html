@@ -8,16 +8,89 @@
 </head>
 <body>
     <script>
-        let obj1 = {
-            name:'Allen',
-            age:20
+        // let obj1 = {
+        //     name:'Allen',
+        //     age:20
+        // }
+        // let obj2 = {
+        //     sex:'men',
+        //     collage:'hrbUst'
+        // }
+        // let obj3 = Object.assign({},obj1,obj2)
+        // console.log(obj3);
+        
+        // //遍历对象自身的和继承的所有属性，不含symbol
+        // for(item in obj2){
+        //     console.log(item)
+        // }
+
+        // // 包括对象自身的所有可枚举属性，不含symbol与不含继承
+        // console.log(Object.keys(obj2)) 
+
+        // //返回对象自身属性，不含symbol，包括不可枚举
+        // console.log(Object.getOwnPropertyNames(obj3));
+        
+        // //返回所有的symbol类型的数组
+        // Object.getOwnPropertySymbols(obj); 
+
+        // //返回一个数组 包含不管是否是可枚举以及是否是symbol
+        // Reflect.ownKeys(obj) 
+
+
+        // Object.assign(this,{x,y})//添加属性
+
+        // Object.assign(this.prototype,{
+        //     method(){
+        //         console.log("as");
+
+        //     }
+        // })
+
+
+        /**
+         *  __proto__ 属性  获取该对象的原型对象
+        */
+        
+
+        //对象
+        let obj  = {
+            name: 'Allen',
+            age:30,
+            sex:'men'
         }
-        let obj2 = {
-            sex:'men',
-            collage:'hrbUst'
+        let obj2 = Object.create(obj)
+        console.log(obj2.__proto__); //obj2的原型对象 即 obj
+        console.log(Object.getPrototypeOf(obj2)); //obj2的原型对象 即 obj
+        
+
+        //类
+        let Person= function(name){
+            this.name = name;
+            this.age = 20;
         }
-        let obj3 = Object.assign({},obj1,obj2)
-        console.log(obj3)
+
+        //类的实例化即为对象
+        let p1 = new Person(5);
+        console.log(Person.prototype) //-->constructor
+        console.log(p1.constructor) //构造函数
+
+
+
+        //对象的constructor指向构造函数
+        //构造函数的prototype指向constructor
+        //类的__proto__指向原型对象
+
+
+        Object.setPrototypeOf(obj) //设置对象的原型对象
+
+
+        Object.keys()  ;  //获取对象的所有key
+        Object.values();
+
+        Object.entries() //获取对象的键值 组成的键值对数组 [[name,15],[age,20]]
+        Object.fromEntries() //entries的逆操作
+        
+
     </script>
 </body>
 </html>
