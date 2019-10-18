@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function foo({x,y=5}={}){
+            console.log(x,y) 
+        }    
+        foo({x:6,y:7})
+
+        function m1({x,y} = {x:0,y:0}){
+            console.log(x);
+            console.log(y);
+        }
+        m1({})
+
+        function m2({x=0,y=0} = {}){
+            console.log(x);
+            console.log(y);
+        }
+        m2({})
+
+        //函数的length属性在函数指定默认值后将会是真，length属性代表函数参数的个数
+
+        //箭头函数
+            let a = ()=> 5
+            console.log(a())
+        
+        var w = 1;
+        function eg(w,q = function(){w=2}){
+           var w = 3;
+           q()
+           console.log(w) 
+        }
+        eg();
+        console.log(w)
+
+        function throwParams(){
+            throw new Error('缺少参数')
+        }
+        function fox(x=throwParams()){
+            console.log('aaa')
+        }
+        fox(5)
+
+
+
+        // function Timer(){
+        //     this.s1 = 0;
+        //     this.s2 = 0;
+        //     setInterval(()=>{
+        //         console.log(this)
+        //         this.s1++;
+        //     },1000)
+        //     setInterval(function(){
+        //         console.log(this)
+
+        //     },1000)
+
+        // }
+        // var timer = new Timer();
+        // setTimeout(()=>console.log(timer),3100)
+
+
+
+        var handler = {
+            id:4545,
+
+            init : ()=> {console.log(this)},
+
+            doSomeThing(){
+                console.log(this)
+            }
+        }
+        console.log(typeof handler)
+        handler.init()
+        handler.doSomeThing();
+
+        
+        thisFunction = function(){
+            let s = 5
+            console.log(thisFunction.caller);
+        }
+
+        thisFunction();
+    </script>
+</body>
+</html>
