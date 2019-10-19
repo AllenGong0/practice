@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+       //迭代器利用闭包实现的 generator本身就是个迭代器
+
+        let it = makeIterator(['a','b','c']);
+        console.log(it.next());
+        console.log(it.next())
+        function makeIterator(arr){
+            var nextIndex = 0;
+            return {
+                next:function(){
+                    return nextIndex<arr.length?{value:arr[nextIndex++],done:false}:{value:undefined,done:true}
+                }
+            }
+        }
+
+
+    
+    </script>
+</body>
+</html>

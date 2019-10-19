@@ -25,7 +25,19 @@
         // let arr4Max = Math.max(...arr4);
         // console.log(arr4Max);
 
-        let 
+        
+
+        //map filter均不改变原数组，map是对原数组进行操作返回一个新数组，
+        //filter是对原数组进行过滤，返回一个新数组
+        let arr = [4,5,6];
+        let arr1 = arr.map((item,index)=>{
+           return item*2
+        });
+
+        let arr3 = arr1.filter((item,index)=>{
+                return item>=10
+        })
+        console.log(arr3)
 
     </script>
 </body>
