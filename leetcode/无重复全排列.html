@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = [1,1,2]
+    let res = [],book = [],box = [];
+    for(let i=0; i<num.length;i++){
+        book[i] = 0;
+    }
+    function dfs(step){
+        if(step === num.length){
+            res.push([...box].join(","));
+        }
+        for(let i=0; i<num.length;i++){
+            if(!book[i]){
+                book[i] = 1;
+                box[step] = num[i];
+                dfs(step+1);
+                book[i] = 0;
+            }
+        }
+        return res;
+    }
+    let newArr = [...new Set(dfs(0))];
+    console.log(newArr)
+    for(let i = 0; i < newArr.length; i++){
+        let tmp = newArr[i].split(",");
+        for(let j = 0; j<tmp.length; j++){
+            tmp[j] *= 1;
+        }
+        newArr[i] = tmp
+    }
+    console.log(newArr)
+    </script>
+</body>
+</html>

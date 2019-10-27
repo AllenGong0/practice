@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function TreeNode(x) {
+            this.val = x;
+            this.left = null;
+            this.right = null;
+        } 
+        let tree = new TreeNode(8);
+        tree.left = new TreeNode(6)
+        tree.left.left = new TreeNode(5)
+        tree.left.right = new TreeNode(7)
+
+        tree.right = new TreeNode(10);
+        tree.right.left = new TreeNode(9);
+        tree.right.right = new TreeNode(11);
+
+        console.log(tree);
+        PrintFromTopToBottom(tree);
+        function PrintFromTopToBottom(root){
+            let arr = [];
+            arr.push(root);
+            PrintTree(arr)
+        }
+        function PrintTree(arr){
+            let n = arr.length;
+            if(n===0) return;
+            let tmp = [];
+            for(let i = 0; i < n; i++){
+                console.log(arr[i].val);
+                let left = arr[i].left;
+                let right = arr[i].right;
+                if(left){
+                    tmp.push(left)
+                }
+                if(right){
+                    tmp.push(right);
+                }
+            }
+            PrintTree(tmp)
+        }
+    </script>
+</body>
+</html>

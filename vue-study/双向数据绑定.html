@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <div>
+        <div id="div1"></div>
+        <input type="text" name="" id="" onkeyup="changeState(this.value)">
+
+    </div>
+</head>
+<body>
+    <script>
+        function changeState(val){
+            state.value = val;
+        }
+        function observer(data){
+            if(!data || typeof data !== 'object'){
+                return;
+            }
+            Object.keys(data).forEach(key=>{
+                    defineReactive(data,key,data[key])
+            })
+        }   
+
+        function defineReactive(data,key,val){
+
+                observer(val);
+                Object.defineProperty(data,key,{
+                    enumerable:true,
+                    get:function(){
+                        return val;
+                    },
+                    set:function(newVal){
+                        if(newVal===val){
+                            return false
+                        }else{
+                            val = newVal;
+                            view();
+
+                        }
+                    }
+                })
+        }
+        
+        function view(){
+            let div1 = document.getElementById('div1');
+            div1.innerText = state.value
+        }
+        let state = {
+            value:'',
+            name:'asd'
+        }
+        
+        observer(state);
+        
+        state.value = 'allen';
+        console.log(state)
+
+
+    </script>
+</body>
+</html>

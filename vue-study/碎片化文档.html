@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">this is document fragment
+        <div class="div2">this is child</div>
+    </div>
+    <script>
+        let dom = document.getElementById('app');
+        console.log(dom)
+        let frag = document.createDocumentFragment(dom);
+        console.log(frag);
+        let a = 5;
+        function asd(){
+            let a = 6;
+            console.log(a)
+        }
+        asd();
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [3,5,8,2,5];
+        let sum = arr.reduce((pre,cur,index,array)=>{
+            console.log(pre);
+            console.log(cur);
+            console.log(index);
+            console.log(array)
+            return pre+cur
+        })
+        console.log(sum)
+    </script>
+</body>
+</html>

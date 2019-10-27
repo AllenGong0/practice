@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            background: #000;
+            width: 500px;
+            height: 500px;
+            float: left;
+        }:after{
+            content: '';
+            display: block;
+            clear: both;
+            overflow: hidden;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="div1">
+        浮动元素
+    </div>
+    <div id="div2">float element</div>
+    <div>非浮动元素</div>
+</body>
+</html>
