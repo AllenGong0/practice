@@ -26,5 +26,53 @@
     </div>
     <div id="div2">float element</div>
     <div>非浮动元素</div>
+    <script>
+        // let obj = {
+        //     name:'allen',
+        //     age:35
+        // }
+        // for(key in obj){
+        //     console.log(key)
+        // }
+
+        function Person(name){
+            this.name = name
+        }
+        function Student(name){
+            Person.call(this,name);
+        }
+        Student.prototype = new Person('asd');
+        let stu = new Student('asssss');
+        console.log(stu)
+        var p1 = new Person('qwe');
+        Person.prototype = {
+                name:'test',
+                age:'qwe'
+        }
+        var p2 = new Person('asd')
+        console.log(p1.name);
+        console.log(p2.age)
+
+        let arr = [3,5,8,4,5];
+        let a = arr.filter(function(item){
+            return item===5
+        });
+        console.log(a);
+
+        function asd(a,b,c){
+            console.log(...arguments)
+        }
+        asd(8,4,3);
+
+
+        function create(){
+            let bb = 5;
+            return function(){
+                console.log(bb);
+            }
+        }
+        let q = create();
+        q();
+    </script>
 </body>
 </html>

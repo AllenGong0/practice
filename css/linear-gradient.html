@@ -23,5 +23,14 @@
 
 </div>
 <div id="div1"></div>
+<script>
+    setTimeout(function(){
+        console.log("time out")
+    },0)
+    new Promise(function(){
+        console.log("promise")
+    })
+    console.log("主线程")
+</script>
 </body>
 </html>
