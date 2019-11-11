@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" data-info="qwe"><div id="div2"></div></div>
+    <script>
+        let div1 = document.getElementById("div1");
+        console.log(div1.dataset["info"]);
+        let div2 = document.getElementById("div2")
+        div2.outerHTML="<a>sss</a>"
+        console.log(div2.outerHTML)
+
+    </script>
+</body>
+</html>

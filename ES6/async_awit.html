@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function await1(){
+            setTimeout(()=>{
+                console.log("asd")
+            },2000)
+            return 10;
+        }
+        function await2(arg){
+            return arg+2;
+        }
+        async function asd(){
+            let b = await await1();
+            let c = await await2(5);
+            return 5 + c;
+        }
+        asd().then((data)=>{
+            console.log(data)
+        });
+
+
+
+        //延迟return 利用async/await + promise 因为promise 是微任务 so 先执行微任务，
+           // 后执行红任务，要把微任务里的宏任务执行完 
+        // async function a() {
+        //     await new Promise(resolve => {
+        //         setTimeout(() => {
+        //             resolve()
+        //         },2000)
+        //     })
+        //     return 666
+        // }
+
+        // a().then(res => {
+        //     console.log(res) // 666
+        // })
+
+      
+        
+        let p1 = new Promise((resolve,reject)=>{
+            resolve()
+        })
+        let q = p1.then(()=>{
+            console.log("sasd")
+            return 5;
+        })
+        q.then((data)=>{
+            console.log(data)
+            console.log("asd")
+        })
+
+
+    </script>
+</body>
+</html>

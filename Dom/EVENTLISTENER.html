@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div2{
+            width: 50px;
+            height: 50px;
+            background: #000;
+            color: cornsilk;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <div id="div2">
+                <div id="div1">这事div1</div>
+        </div>
+    </div>
+    <script>
+        let div = document.getElementById("div1");
+
+        div.addEventListener("click",()=>{
+            console.log("qwe");
+        },false)
+
+        div.addEventListener("click",()=>{
+            console.log("asd");
+        },false)
+
+        div.onclick = function(){
+            console.log("pppp");
+            console.log(event.target)
+        }
+
+        let div2 = document.getElementById("div2");
+
+        div2.onclick = function(){
+            console.log(event.currentTarget)  //currentTarget 括所有元素
+        }
+        // onclick可以被覆盖，eventListener不可以被覆盖
+    </script>
+</body>
+</html>

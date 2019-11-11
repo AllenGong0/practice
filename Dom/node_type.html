@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="title"><!--dw--><span></span><div class="q"></div>
+    <div class="q"></div>
+    <div class="q"></div>
+    <div class="q"></div>
+    <div class="q"></div><img src="" alt=""></div>
+    <script>
+        let div1 = document.getElementById("title");
+        console.log(div1.childNodes);
+        let classQ = document.getElementsByClassName("q");
+        console.log(classQ);
+        console.log(div1.firstChild.ownerDocument);
+        let arrayNode = Array.prototype.slice.call(div1.childNodes,0);
+        let newNode = document.createElement("div");
+        let returnD = div1.append(newNode);
+        console.log(arrayNode);
+
+    
+    </script>
+</body>
+</html>
