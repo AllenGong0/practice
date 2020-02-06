@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       // 嵌套函数的例子
+       var num1 = 20,num2 = 3,name = "Chamahk";
+       function add() {
+                return name + " scored " + (num1 + num2);
+        }
+        function getScore() {
+            var num1 = 2,
+                num2 = 3;
+            return add();
+        }
+        console.log(getScore()); // 返回 "Chamahk scored 5"
+
+
+        var data = 5;
+        function foo(){
+            console.log(data)
+        }
+
+        function fn(){
+            var data = 6;
+            foo();
+        }
+        fn()
+
+
+        var data1 = 5;
+        if(true){
+            var data1 = 6
+        }
+        console.log(data1)
+
+   </script> 
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="cav" width="200px" height="200px"></canvas>
+    <script>
+        let can = document.getElementById("cav");
+        let ctx = can.getContext("2d");
+        ctx.fillStyle = "#FF0000" //颜色
+        ctx.fillRect(10,0,150,100);//距离，宽高
+    </script>
+</body>
+</html>

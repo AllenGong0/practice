@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // new Promise(function(resolve,reject){
+        //     setTimeout(function(){
+        //         resolve(5);
+        //     },1000)
+
+
+
+
+        //then 的执行顺序问题？
+        new Promise((resolve, reject) => {
+            console.log("promise1")
+            resolve()
+        }).then((data) => {
+            console.log("then1-1");
+            new Promise((resolve, reject) => {
+                console.log("promise2")
+                resolve()
+            }).then(() => {
+                console.log("then2-1")
+                new Promise((resolve, reject) => {
+                    console.log("promise3")
+                    resolve()
+                }).then(() => {
+                    console.log("then3-1")
+                    new Promise((resolve, reject) => {
+                        console.log("promise4")
+                        resolve()
+                    }).then(() => {
+                        console.log("then4-1")
+                    }).then(() => {
+                        console.log("then4-2")
+                    }).then(() => {
+                        console.log("then4-3")
+                    })
+                }).then(() => {
+                    console.log("then3-2")
+                }).then(() => {
+                    console.log("then3-3")
+                })
+            }).then(() => {
+                console.log("then2-2");
+            }).then(() => {
+                console.log("then2-3");
+            })
+        }).then(() => {
+            console.log("then1-2");
+        }).then(() => {
+            console.log("then1-3");
+        })
+
+
+
+// promise1
+// then1-1
+// promise2
+// then2-1
+// promise3
+// then1-2
+// then3-1
+// then2-2
+// then1-3
+// then3-2
+// then2-3
+// then3-3
+
+
+
+
+    // function get(limit){
+    //     return new Promise((resolve,reject)=>{
+    //         console.log(limit)
+    //         resolve(limit)
+    //     })
+    // }
+
+    // get(5).then(data=>{
+    //     if(data!==0){
+    //         return get(data-1);
+    //     }else{
+    //         return Promise.catch();
+    //     }
+    // }).catch((data)=>{
+    //     console.log("this is catch");
+    // })
+
+            // console.log(Promise)
+
+            // new Promise((resolve,reject)=>{
+            //     console.log("aaa")
+            //     resolve()
+            // }).then(()=>{
+            //    return "asd"
+            // }).then((data)=>{
+            //     console.log(data)
+            // })
+
+
+    </script>
+</body>
+
+</html>

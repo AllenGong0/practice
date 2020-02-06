@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function TreeNode(val){
+            this.val = val;
+            this.left = this.right = null;
+        }
+
+        let tree = new TreeNode(5);
+        tree.left = new TreeNode(3)
+        tree.left.left = new TreeNode(2)
+        tree.left.right = new TreeNode(4)
+
+        tree.right = new TreeNode(7);
+        tree.right.left = new TreeNode(6);
+        tree.right.right = new TreeNode(8);
+
+        function Mirror(root){
+           if(root===null){
+               return;
+           }
+
+           let tmp = root.left;
+           root.left = root.right;
+           root.right = tmp;
+           Mirror(root.left);
+           Mirror(root.right)
+        }
+        Mirror(tree)
+        console.log(tree);
+    </script>
+</body>
+</html>

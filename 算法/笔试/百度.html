@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 0, 2,4];
+        n = 3;
+        var count = 0
+        arr = arr.map((item) => item * 1)
+        let max = Math.max(...arr);
+        function compare(arr,n,max) {
+            let ind = arr.indexOf(max);
+            arr[ind] = arr[ind] - n;
+            for(let i = 0; i < arr.length; i++){
+                if(i!==ind){
+                    arr[i] += 1;
+                }
+            }
+            max = Math.max(...arr)
+            if(max>=n){
+                compare(arr,n,max)
+            }
+        }
+        if(max>=n){
+            compare(arr,n,max)
+        }
+        
+        console.log(count)
+    </script>
+</body>
+
+</html>

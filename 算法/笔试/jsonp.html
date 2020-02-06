@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="oBt">ajax</div>
+    <div id="main"></div>
+    <script>
+        let bt = document.getElementById("oBt");
+        bt.addEventListener('click',ajax,false);
+        function ajax(){
+            let script = document.createElement("script");
+            let callBackName = 'callBack';
+            window[callBackName] = function (data){
+                    document.getElementById("main").innerHTML = data;
+            }    
+            script.src = 'http://localhost:8080/jsonp?callback='+callBackName;
+            document.body.append(script);
+        }
+
+        
+    </script>
+</body>
+</html>

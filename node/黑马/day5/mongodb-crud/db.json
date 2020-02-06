@@ -1,0 +1,32 @@
+{
+    "student": [
+        {
+            "id": "1",
+            "name": "789",
+            "gender": "1",
+            "age": "21",
+            "hobbies": "852852"
+        },
+        {
+            "id": "3",
+            "name": "asarsa",
+            "gender": "1",
+            "age": "15",
+            "hobbies": "ewgjwigjwob"
+        },
+        {
+            "id": "6",
+            "name": "allen",
+            "gender": "1",
+            "age": "20",
+            "hobbies": "ewgjwigjwob"
+        },
+        {
+            "id": "11",
+            "name": "qfq",
+            "gender": "0",
+            "age": "a",
+            "hobbies": "ewgjwigjwob"
+        }
+    ]
+}

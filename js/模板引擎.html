@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    // 模板引擎
+    var tpl = "i am a <%= sex %>, i love play <%= game %>"
+    obj = {
+        sex: 'boy',
+        game: 'basketball'
+    }    
+    function tmpl(str,obj){
+        let left = '<%=';
+        let right = '%>'
+        while(str.indexOf(left)!==-1){
+            let start = str.indexOf(left);
+            let end = str.indexOf(right);
+            let pro = str.substring(start+3,end).trim();
+            str = str.substring(0,start) + obj[pro] + str.substring(end+2);
+            console.log(str)
+        }
+    }
+    tmpl(tpl,obj)
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
+        #animation{
+            width: 100px;
+            height: 100px;
+            background: #cd0000 !important;
+            animation: draw 5s linear infinite alternate;
+        }
+              
+        @keyframes  draw{
+            /*from{*/
+            /*    background: #61dafb;*/
+            /*}*/
+            /*to{*/
+            /*    background: #282c34;*/
+            /*}*/
+            0%{
+                background: #cd0000;
+            }
+            25%{
+                background: green;
+            }
+            50%{
+                background: black ;
+            }
+            100%{
+                background: blue ;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="animation"></div>
+</body>
+</html>
