@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: grey;
+        }
+
+        .column-layout {
+            background: white;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main-layout {
+            flex: 2;
+            order: 2;
+        }
+
+        .sidebar-one {
+            flex: 1;
+            order: 1;
+        }
+
+        .sidebar-two {
+            flex: 1;
+            order: 3;
+        }
+
+        .main-feature {
+            max-width: 1400px;
+        }
+
+        @media  (min-width : 900px) {
+            .main-feature {
+                display: flex;
+                justify-content: space-between;
+
+            }
+        }
+
+        .feature {
+            width: 30%;
+        }
+
+        .feature:nth-child(1) {
+            background-color: purple;
+        }
+
+        .feature:nth-child(2) {
+            background-color: green;
+        }
+
+        .feature:nth-child(3) {
+            background-color: palegoldenrod;
+        }
+
+        .outer-center {
+            background: #000;
+            width: 100px;
+            color: wheat;
+            height: 100px;
+            display: flex;
+        }
+
+        .inner-center {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="column-layout">
+        <div class="main-layout">
+            <h1>main </h1>
+            <main>
+                this is this is this isthis is this is this is this is this is this is this is this is this is this is
+                this is this is this is this is this is this is this is this is this is this is this is this is this is
+                this is
+                this is this is this is this is this is this is this is this is this is this is this is this is this is
+                this is this is this is this is this is
+                this is this is this is this is this is this is this is this is this is this is this is this is this is
+                this is this is this is this is this is this is this is this is
+                this is this is this is this is this is this is this is this is this is this is this is this is this is
+                this is this is this is this is this is
+                this is this is this is this is this is this is this is this is this is this is this is this is this is
+                this is this is this is this is this is
+                this is this is this is this is this is this is this is this is this is this is this is this is this is
+                this is this is this is this is this is
+                this is this is this is this is this is this is this is this is this is this is this is this is this is
+                this is this is this is this is this is
+                this is this is this is this is this is this is this is this is this is this is this is this is
+            </main>
+        </div>
+        <div class="sidebar-one">
+            <h1>sidebar one</h1>
+            <main>
+                this is sidebar this is sidebarthis is sidebarthis is sidebarthis is sidebarthis is sidebarthis is
+                sidebarthis is sidebar
+            </main>
+        </div>
+        <div class="sidebar-two">
+            <h1>sidebar two</h1>
+            <main>
+                this is sidebar this is sidebarthis is sidebarthis is sidebarthis is sidebarthis is sidebarthis is
+                sidebarthis is sidebar
+            </main>
+        </div>
+    </div>
+
+
+    <div class="main-feature">
+        <div class="feature">
+            <div> awfwawdwwqawfwawdwwqawfwawdwwqawfwawdwwqaw
+                awfwawdwwqawfwawdwwqawfwawdwwqawfwawdwwqaw
+            </div>
+        </div>
+        <div class="feature">
+            <div> awfwawdwwqawfwawdwwqawfwawdwwqawfwawdwwqaw
+                awfwawdwwqawfwawdwwqawfwawdwwqawfwawdwwqaw
+            </div>
+        </div>
+        <div class="feature">
+            <div> awfwawdwwqawfwawdwwqawfwawdwwqawfwawdwwqaw
+                awfwawdwwqawfwawdwwqawfwawdwwqawfwawdwwqaw
+            </div>
+        </div>
+    </div>
+
+    <div class="outer-center">
+        <div class="inner-center">sajidjafi</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{person.name}} -- {{person.age}}</h2>
+        <h3>{{person.fav}}</h3>
+        <span>width</span>
+        <ul v-for="item in 4">
+            <li>{{item}}</li>
+        </ul>
+        <h3>{{msg}}</h3>
+        <div v-text = 'msg'></div>
+        <div v-text = 'person.name'></div>
+        <div v-html = 'htmlStr'></div>
+
+        <input type="text" v-model='msg' name="" id="">
+        <div id="div1">dqwdwq</div>
+
+    </div>
+    <script src="./Observe.js"></script>
+    <script src="./MVue.js"> </script>
+    <script>
+        var app = new MVue({
+            el: '#app',
+            data: {
+                msg: 5,
+                person:{
+                    name:'allen',
+                    fav:'as',
+                    age:20
+                },
+                item:5,
+                htmlStr:`<div>这是htmlStr</div>`
+            }
+        });
+    </script>
+</body>
+
+</html>
