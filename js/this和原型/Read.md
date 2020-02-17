@@ -32,6 +32,10 @@
     (3)显示绑定
         call apply bind
         把null或者undefined传入函数中会被忽略
+        软绑定： 
+
+
+
     (4)强制绑定
         new 操作符
         创建新对象，连接原型，绑定this，返回新对象
