@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>{{msg}}</div>
+    </div>
+    <script src="../vue2.6.js"></script>
+    <script>
+        // Object.hh = function(){
+        //     console.log(this.prototype)
+        // }
+        // Object.hh();
+        Vue.prototype.hh = function(){
+            console.log(5)
+        }
+        var vm = new Vue({
+            el:'#app',
+            data (){
+                return {
+                    msg:'555'
+                }
+            },
+            created(){
+                this.msg = 6;
+                console.log("created")
+            },
+            mounted(){
+                console.log("mounted")
+            },
+            activated(){
+                debugger
+                console.log("activated")
+            }
+        })
+        Vue.nextTick(function () {
+            console.log("nextTick")
+        })
+
+        
+        
+    </script>
+</body>
+</html>

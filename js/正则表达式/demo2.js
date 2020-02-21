@@ -22,12 +22,32 @@
 // let res = str.match(/\w*=\w*/g);
 // console.log(res)
 // res.map((w)=>console.log(w))
-console.log(new Date())
-let str = `
-    <h1>allen</h1>
-    <span>宫立新</span>
-    <h2>asd</h2>
-`
-let reg = /<(h[1-6])>([\s\S]+)<\/\1>/gi
-console.log(str.replace(reg,'<p>$1</p>'))
+// console.log(new Date())
+// let str = `
+//     <h1>allen</h1>
+//     <span>宫立新</span>
+//     <h2>asd</h2>
+// `
+// let reg = /<(h[1-6])>([\s\S]+)<\/\1>/gi
+// console.log(str.replace(reg,'<p>$1</p>'))
 // $可以取到第几个原子组
+
+// let reg = />[\s\S]+</g;
+
+let reg = [
+    /\s/,
+    /\d/,
+    /\w/
+]
+
+let str = 'wa sdw5'
+
+let res = reg.map(item=>{
+    let s = item.exec(str);
+    console.log(s)
+    return s;
+})
+let status = reg.every(item=>{
+    return item.test(str)
+})
+console.log(status)
