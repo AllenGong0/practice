@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            /* padding: 10; */
+            display: grid;
+            grid-template-columns: 100px calc(100% - 100px);
+            grid-template-rows: 100px 200px;
+            height: 400px;
+            width: 600px; 
+        }
+
+        .inner {
+            margin-right: 10px;
+            margin-bottom: 10px;
+            /* width: 50px;;
+            height: 50px; */
+            background: #000;
+        }
+
+        @media screen and (max-width : 960px){
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <!-- <div class="inner"></div>
+        <div class="inner"></div>
+        <div class="inner"></div> -->
+    </div>
+</body>
+
+</html>

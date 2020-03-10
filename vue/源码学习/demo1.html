@@ -9,15 +9,12 @@
     <div id="app">
         <div>{{msg}}</div>
     </div>
-    <script src="../vue2.6.js"></script>
+    <script src="../vue.js"></script>
     <script>
         // Object.hh = function(){
         //     console.log(this.prototype)
         // }
         // Object.hh();
-        Vue.prototype.hh = function(){
-            console.log(5)
-        }
         var vm = new Vue({
             el:'#app',
             data (){
@@ -32,14 +29,8 @@
             mounted(){
                 console.log("mounted")
             },
-            activated(){
-                debugger
-                console.log("activated")
-            }
         })
-        Vue.nextTick(function () {
-            console.log("nextTick")
-        })
+ 
 
         
         

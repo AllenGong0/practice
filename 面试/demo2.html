@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #A{
+            width: 100%;
+            display: flex;
+            border: 1px solid red;
+        }
+        #B{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+        #C{
+            width: 1px;
+            height: 200px;
+        } */
+
+        /* div{
+            border: 1px solid red;
+        }
+        #A{
+            width: 100%;
+
+        }
+
+        #B{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+        #C{
+            margin-left: 100px;
+            height: 200px;
+        } */
+    </style>
+</head>
+<body>
+    <div id="A">
+        <div id="B"></div>
+        <div id="C"></div>
+    </div>
+
+    <ul id="oUl">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+
+        let li = document.getElementById("oUl").children;
+        // [...li].forEach((item)=>{
+        //     console.log(item);
+        // })
+        for(let key in li){
+            console.log(key)
+        }        
+        function fn(){
+            this.a = 5;
+            this.b = 6;
+        }
+        fn.prototype.say = function(){
+            console.log("say")
+        }
+        function newMethod(fn){
+            var obj = {}
+            // var obj = Object.create(fn.prototype);
+            obj.__proto__ = fn.prototype;
+            obj.constructor = fn;
+            fn.call(obj);
+            return obj;
+        }
+        let b = newMethod(fn);
+        let c = newMethod(fn);
+        c.q = 5;
+        console.log(b,c)
+
+
+    </script>
+</body>
+</html>

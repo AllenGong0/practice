@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #inner{
+            display: inline-block;
+            width: 30px;
+            background: #000;
+            overflow: hidden;
+            display: grid;
+            grid-template-rows: max-content;
+        }
+    </style>
+</head>
+<body>
+    <div id="inner">fwfjaijsifjiwoajsklfjwla</div>
+    <script>
+        let obj = {
+            'name':'sara',
+            a:()=>{
+            console.log(this)
+            }
+        }
+         obj.a();
+  
+        // obj.a.bind({name:"allen"})()
+    </script>
+</body>
+</html>

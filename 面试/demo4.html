@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .container{
+            display: grid;
+            grid-template-columns: 50px 50px 50px;
+            grid-template-rows: 50px 50px 50px;
+        }
+        .inner{
+            border: 1px solid #e5e4e9;
+            background: #000;
+        } */
+
+        .container {
+            width: 50px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
+
+        #con2 {
+            position: relative;
+            height: 40px;
+            width: 250px;
+            line-height: 20px;
+            overflow: hidden;
+            padding-right: 12px;
+        }
+
+        .t2 {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .container {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p id="container">车主邦车主邦车主邦车主邦
+        车主邦车主邦车主邦车车主
+        车主邦车主邦车主邦车主
+    </p>
+    
+    <div>
+        <div id="txt">dwamkldwakokfoafjaijfaofjaofjaoifjwaojdoifjweodwakdiaodwdkow</div>
+        <span class="t"></span>
+    </div>
+
+
+    <!-- <div class="container">awfjiwamksmfwaiosmfmawl</div> -->
+    <!-- <div class="container">
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <div class="inner"></div>
+    </div> -->
+</body>
+
+</html>
