@@ -1,0 +1,9 @@
+<button [disabled]="isUnchanged">Save</button>
+<!-- 请注意，这里绑定到的是按钮的 DOM 元素的 disabled 这个 Property，而不是 Attribute。 这是数据绑定的通用规则。数据绑定使用 DOM 元素、组件和指令的 Property，而不是 HTML
+的Attribute。 -->
+
+<button (click) = con(phone)></button>
+<input #phone placeholder="phone number" />
+
+<input #box (keyup)="0">
+<p>{{box.value}}</p>
