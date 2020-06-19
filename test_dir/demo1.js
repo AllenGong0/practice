@@ -7,7 +7,7 @@ function shifa(){
 } 
 
 
-function master(){
-    console.log("这是master分支")
+function glx(){
+    console.log("这是glx分支")
 }
 
