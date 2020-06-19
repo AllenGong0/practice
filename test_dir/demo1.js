@@ -18,3 +18,4 @@ function me(){
 function nowMaster(){
     console.log("我是master分支");
 }
+let c = 8
