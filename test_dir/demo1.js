@@ -5,10 +5,12 @@ function say(){
 function shifa(){
     
 } 
-function test(){
-    
+
+
+function study(){
+    console.log("这是master分支")
 }
 
-function stss(){
+function wd(){
     console.log("这是master分支")
 }
