@@ -4,4 +4,9 @@ function say(){
 
 function shifa(){
     
+} 
+
+
+function ss() {
+    console.log("this is a person");
 }
