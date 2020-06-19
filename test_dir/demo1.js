@@ -7,14 +7,7 @@ function shifa(){
 } 
 
 
-function study(){
+function master(){
     console.log("这是master分支")
 }
 
-function wd(){
-    console.log("这是master分支")
-}
-
-function stss(){
-    console.log("这是glx分支")
-}
