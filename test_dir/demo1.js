@@ -10,5 +10,5 @@ function test(){
 }
 
 function stss(){
-    console.log("这是master分支")
+    console.log("这是glx分支")
 }
