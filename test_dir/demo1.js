@@ -11,3 +11,7 @@ function master(){
 function me(){
     console.log("我要合并分支了");
 }
+
+function nowMaster(){
+    console.log("我是master分支");
+}
