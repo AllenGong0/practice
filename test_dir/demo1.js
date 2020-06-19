@@ -8,3 +8,7 @@ function shifa(){
 function test(){
     
 }
+
+function stss(){
+    console.log("这是master分支")
+}
