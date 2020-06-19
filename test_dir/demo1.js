@@ -16,5 +16,4 @@ function nowMaster(){
 }
 let c = 8
 
-let a = ()=> 5;
 let b = ()=> 6;
