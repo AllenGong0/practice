@@ -20,3 +20,5 @@ let b = ()=> 6;
 
 let d = 15
 let wq = 'qwd';
+
+let wwwwwwww = 27;
